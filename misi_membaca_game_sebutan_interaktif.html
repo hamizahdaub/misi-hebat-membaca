@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Misi Hebat Membaca – Kategori Kata Nama Am</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sky-top: #cbeeff;
+  --sky-bottom: #eaf7ff;
+  --grass-top: #a2e06a;
+  --grass-bottom: #74c439;
+  --cream: #fffdf2;
+  --ink: #1f2d3d;
+  --blue: #3b82f6;
+  --blue-hover: #2563eb;
+  --yellow: #fbc02d;
+  --green: #22c55e;
+  --green-hover: #16a34a;
+  --orange: #f97316;
+  --purple: #8b5cf6;
+  --card-bg: #ffffff;
+  --shadow-lg: 0 20px 35px -10px rgba(30, 58, 138, 0.15), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+  --shadow-button: 0 6px 0px rgba(0, 0, 0, 0.15);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-bottom) 50%, #dcfce7 50%, var(--grass-top) 100%);
+  background-attachment: fixed;
+  padding-bottom: 40px;
+}
+
+button, input { font-family: inherit; }
+
+#app {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #fffdf0 100%);
+  border-radius: 28px;
+  padding: 20px 24px;
+  box-shadow: var(--shadow-lg);
+  border: 4px solid #ffffff;
+  margin-bottom: 16px;
+}
+
+.heroRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.titleBlock h1 {
+  margin: 0;
+  font-family: 'Fredoka', cursive;
+  font-size: clamp(26px, 4.2vw, 40px);
+  color: #0f172a;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.titleBlock p {
+  margin: 6px 0 0;
+  font-size: 15px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.twins {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  background: #f0f9ff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 2px dashed #bae6fd;
+}
+
+.kid {
+  width: 68px;
+  height: 92px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  transition: transform 0.3s ease;
+}
+
+.kid:hover { transform: translateY(-4px) scale(1.05); }
+
+.head {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fcd34d;
+  border: 3px solid #78350f;
+  position: absolute;
+  top: 0;
+}
+
+.eye {
+  width: 6px;
+  height: 8px;
+  background: #1e293b;
+  border-radius: 50%;
+  position: absolute;
+  top: 16px;
+  animation: blink 4s infinite;
+}
+.eye.l { left: 12px; }
+.eye.r { right: 12px; }
+
+@keyframes blink {
+  0%, 96%, 100% { transform: scaleY(1); }
+  98% { transform: scaleY(0.1); }
+}
+
+.smile {
+  position: absolute;
+  left: 15px;
+  top: 28px;
+  width: 16px;
+  height: 7px;
+  border-bottom: 3px solid #78350f;
+  border-radius: 0 0 16px 16px;
+}
+
+.hair1 {
+  position: absolute;
+  top: -8px;
+  left: 18px;
+  width: 8px;
+  height: 16px;
+  border-radius: 50%;
+  border-left: 4px solid #1e293b;
+  transform: rotate(-15deg);
+}
+.hair2 {
+  position: absolute;
+  top: -5px;
+  left: 16px;
+  width: 8px;
+  height: 16px;
+  border-radius: 50%;
+  border-left: 4px solid #1e293b;
+  transform: rotate(30deg);
+}
+
+.body {
+  width: 52px;
+  height: 44px;
+  border-radius: 14px 14px 8px 8px;
+  border: 3px solid #1e293b;
+}
+.kid.a .body { background: #38bdf8; }
+.kid.b .body { background: #f43f5e; }
+
+.short {
+  width: 46px;
+  height: 16px;
+  background: #334155;
+  border-radius: 4px 4px 8px 8px;
+  margin-top: -4px;
+  border: 3px solid #1e293b;
+}
+
+.stats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.soundToggle {
+  cursor: pointer;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.catNav {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 2px 12px;
+  margin-bottom: 12px;
+  scrollbar-width: thin;
+}
+
+.catBtn {
+  background: #ffffff;
+  border: 3px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 10px 18px;
+  font-weight: 800;
+  font-size: 15px;
+  color: #475569;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+
+.catBtn:hover {
+  border-color: #93c5fd;
+  transform: translateY(-2px);
+}
+
+.catBtn.active {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border-color: #1d4ed8;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+}
+
+.catBtn .count {
+  background: rgba(0, 0, 0, 0.08);
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.catBtn.active .count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: var(--shadow-lg);
+  border: 3px solid #ffffff;
+  position: relative;
+}
+
+.levelTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.levelTitle {
+  font-family: 'Fredoka', cursive;
+  font-size: 22px;
+  color: #0f172a;
+}
+
+.roundBadge {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.progress {
+  height: 16px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 12px 0 18px;
+  padding: 3px;
+}
+
+.bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4ade80, #22c55e);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.target {
+  text-align: center;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 24px;
+  border: 2px dashed #cbd5e1;
+  margin-bottom: 18px;
+}
+
+.emoji {
+  font-size: 80px;
+  line-height: 1.1;
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,0.1));
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.emoji:hover { transform: scale(1.15) rotate(5deg); }
+
+.word {
+  font-family: 'Fredoka', cursive;
+  font-size: clamp(56px, 10vw, 92px);
+  color: #0f172a;
+  letter-spacing: 4px;
+  margin: 6px 0;
+  text-shadow: 2px 2px 0px #cbd5e1;
+}
+
+.syllableLine {
+  font-size: 20px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.actionRow {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.btn {
+  border: none;
+  border-radius: 20px;
+  padding: 14px 22px;
+  min-height: 54px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+  box-shadow: var(--shadow-button);
+}
+
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0px rgba(0, 0, 0, 0.15);
+}
+
+.btn.audio { background: var(--blue); color: #ffffff; }
+.btn.audio:hover { background: var(--blue-hover); }
+
+.btn.mic { background: var(--orange); color: #ffffff; font-size: 18px; }
+.btn.mic:hover { background: #ea580c; }
+
+.btn.next { background: var(--green); color: #ffffff; }
+.btn.next:hover { background: var(--green-hover); }
+
+.btn.gray { background: #64748b; color: #ffffff; }
+.btn.purple { background: var(--purple); color: #ffffff; }
+.btn.purple:hover { background: #7c3aed; }
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.micPulse {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.listening .micPulse {
+  animation: pulseMic 0.7s infinite alternate;
+}
+
+@keyframes pulseMic {
+  from { transform: scale(1); }
+  to { transform: scale(1.3); }
+}
+
+.result {
+  min-height: 105px;
+  background: #ffffff;
+  border: 3px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 16px;
+  margin-top: 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heard { font-size: 17px; font-weight: 700; color: #334155; }
+.score { font-family: 'Fredoka', cursive; font-size: 38px; margin: 2px 0; }
+.feedback { font-size: 16px; font-weight: 800; }
+
+.good { color: #16a34a; }
+.mid { color: #d97706; }
+.low { color: #dc2626; }
+
+.manualBox {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 2px dashed #e2e8f0;
+}
+
+.manualTitle {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.manualButtons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.manualButtons .btn {
+  padding: 8px 14px;
+  min-height: 40px;
+  font-size: 13px;
+  border-radius: 14px;
+}
+
+.customRecPanel {
+  background: #f0fdf4;
+  border: 2px dashed #4ade80;
+  border-radius: 20px;
+  padding: 14px 18px;
+  margin: 12px 0;
+  text-align: center;
+}
+.recTitle { font-weight: 800; font-size: 15px; color: #15803d; }
+.recDesc { font-size: 13px; color: #166534; margin: 4px 0 10px; }
+.recControls { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 8px; }
+.btn.redSmall { background: #ef4444; color: #fff; padding: 6px 14px; font-size: 13px; min-height: 38px; }
+.btn.graySmall { background: #64748b; color: #fff; padding: 6px 14px; font-size: 13px; min-height: 38px; }
+.btn.blueSmall { background: #0284c7; color: #fff; padding: 6px 14px; font-size: 13px; min-height: 38px; }
+.btn.orangeSmall { background: #f97316; color: #fff; padding: 6px 14px; font-size: 13px; min-height: 38px; }
+.recStatus { font-size: 12px; font-weight: 700; color: #334155; }
+
+.sideTitle {
+  font-family: 'Fredoka', cursive;
+  font-size: 20px;
+  color: #0f172a;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rewardPanel {
+  background: #fef9c3;
+  border: 2px solid #fde047;
+  border-radius: 22px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.rewardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.rewardCell {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 10px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 13px;
+  color: #475569;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.rewardCell span {
+  font-family: 'Fredoka', cursive;
+  font-size: 22px;
+  color: #0f172a;
+  display: block;
+  margin-top: 2px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.badge {
+  padding: 8px 12px;
+  background: #f1f5f9;
+  border: 2px solid #e2e8f0;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px;
+  color: #94a3b8;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.badge.on {
+  opacity: 1;
+  background: #fef08a;
+  border-color: #facc15;
+  color: #854d0e;
+  box-shadow: 0 4px 10px rgba(250, 204, 21, 0.3);
+}
+
+.mission {
+  padding: 14px;
+  border-radius: 18px;
+  background: #eff6ff;
+  border: 2px solid #bfdbfe;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #1e3a8a;
+}
+
+.spark {
+  position: absolute;
+  pointer-events: none;
+  font-size: 28px;
+  animation: sparkPop 1.2s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+  z-index: 100;
+}
+
+@keyframes sparkPop {
+  0% { transform: translateY(0) scale(0.5); opacity: 1; }
+  100% { transform: translateY(-90px) rotate(30deg) scale(1.3); opacity: 0; }
+}
+
+.end {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.end .trophy {
+  font-size: 80px;
+  animation: bounceTrophy 1s infinite alternate ease-in-out;
+}
+
+@keyframes bounceTrophy {
+  from { transform: translateY(0); }
+  to { transform: translateY(-12px); }
+}
+
+.notice {
+  background: #fff7ed;
+  border: 1px solid #ffedd5;
+  border-radius: 16px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #9a3412;
+  margin-top: 14px;
+}
+
+@media(max-width: 840px) {
+  .mainGrid { grid-template-columns: 1fr; }
+}
+
+@media(max-width: 480px) {
+  #app { padding: 10px; }
+  .hero, .card { border-radius: 20px; padding: 16px; }
+  .twins { transform: scale(0.85); transform-origin: center; }
+  .word { font-size: 48px; }
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modalOverlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modalContent {
+  background: #ffffff;
+  border-radius: 24px;
+  max-width: 580px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 4px solid #bae6fd;
+}
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed #e2e8f0;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+.modalTitle {
+  font-family: 'Fredoka', cursive;
+  font-size: 22px;
+  color: #0f172a;
+}
+.closeBtn {
+  background: #f1f5f9;
+  border: none;
+  font-size: 20px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.guideStep {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border-left: 4px solid #3b82f6;
+}
+.guideStep h4 { margin: 0 0 4px; font-size: 15px; color: #1e293b; }
+.guideStep p { margin: 0; font-size: 13px; color: #475569; }
+</style>
+</head>
+<body>
+<div id="app">
+  <section class="hero">
+    <div class="heroRow">
+      <div class="titleBlock">
+        <h1>🌟 Misi Hebat Membaca</h1>
+        <p>Pengembaraan sebutan Kata Nama Am 2 suku kata bersama Kembar Aiman & Aina.</p>
+      </div>
+
+      <div class="twins" aria-label="Karakter Kembar Aiman dan Aina">
+        <div class="kid a" title="Aiman">
+          <div class="head"><span class="hair1"></span><span class="eye l"></span><span class="eye r"></span><span class="smile"></span></div>
+          <div class="body"></div>
+          <div class="short"></div>
+        </div>
+        <div class="kid b" title="Aina">
+          <div class="head"><span class="hair2"></span><span class="eye l"></span><span class="eye r"></span><span class="smile"></span></div>
+          <div class="body"></div>
+          <div class="short"></div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="pill">⭐ <span id="stars">0</span></div>
+        <div class="pill">🪙 <span id="coins">0</span></div>
+        <div class="pill">🎯 <span id="points">0</span> mata</div>
+        <div class="pill">🔥 <span id="streak">0</span></div>
+        <button id="guideBtn" class="soundToggle" type="button">❓ Panduan</button>
+        <button id="soundToggle" class="soundToggle" type="button">🔊 Bunyi: ON</button>
+      </div>
+    </div>
+  </section>
+
+  <nav class="catNav" id="catNav">
+    <button type="button" class="catBtn active" data-cat="benda">📦 Benda <span class="count">5 perkataan</span></button>
+    <button type="button" class="catBtn" data-cat="haiwan">🦁 Haiwan <span class="count">5 perkataan</span></button>
+    <button type="button" class="catBtn" data-cat="tempat">🏠 Tempat <span class="count">5 perkataan</span></button>
+    <button type="button" class="catBtn" data-cat="sayur">🥬 Sayur <span class="count">5 perkataan</span></button>
+    <button type="button" class="catBtn" data-cat="makanan">🍱 Makanan <span class="count">5 perkataan</span></button>
+  </nav>
+
+  <div class="mainGrid">
+    <section class="card" id="playCard">
+      <div class="levelTop">
+        <div class="levelTitle" id="levelTitle">Kategori: Benda</div>
+        <div class="roundBadge" id="roundText">1 / 15</div>
+      </div>
+      <div class="progress" aria-label="Kemajuan permainan"><div id="bar" class="bar"></div></div>
+
+      <div id="gameArea">
+        <div class="target">
+          <div id="emoji" class="emoji">🍼</div>
+          <div id="word" class="word">bo</div>
+          <div id="syllables" class="syllableLine">Dengar dahulu, kemudian sebut.</div>
+        </div>
+
+        <div class="actionRow">
+          <button type="button" id="listenBtn" class="btn audio">🔊 Dengar sebutan</button>
+          <button type="button" id="micBtn" class="btn mic"><span class="micPulse">🎙️</span> Tekan & Sebut</button>
+          <button type="button" id="toggleRecPanelBtn" class="btn gray">🎙️ Rakam Suara Khas</button>
+        </div>
+
+        <!-- Panel Rakam Suara Sendiri bagi Cikgu / Ibu Bapa -->
+        <div id="customRecPanel" class="customRecPanel" style="display:none;">
+          <div class="recTitle">🎙️ Tetapan Suara Sendiri (Cikgu / Ibu Bapa)</div>
+          <p class="recDesc">Rakam sebutan anda sendiri untuk <strong>"<span id="recWordTag">bo</span>"</strong> supaya murid mendengar suara anda!</p>
+          <div class="recControls">
+            <button type="button" id="startRecBtn" class="btn redSmall">🔴 Mula Rakam</button>
+            <button type="button" id="stopRecBtn" class="btn graySmall" disabled>⏹ Henti Rakam</button>
+            <button type="button" id="playRecBtn" class="btn blueSmall" disabled>🔊 Uji Audio</button>
+            <button type="button" id="delRecBtn" class="btn orangeSmall" disabled>🗑️ Padam & Guna Asal</button>
+          </div>
+          <div id="recStatus" class="recStatus">Status: Menggunakan sebutan automatik pelayar.</div>
+        </div>
+
+        <div id="result" class="result" aria-live="polite">
+          <div class="heard">Sistem akan paparkan apa yang didengar di sini.</div>
+          <div class="score">—</div>
+          <div class="feedback">Tekan "Dengar sebutan" dahulu atau terus sebut 😊</div>
+        </div>
+
+        <div class="actionRow">
+          <button type="button" id="againBtn" class="btn purple">↺ Cuba lagi</button>
+          <button type="button" id="nextBtn" class="btn next" disabled>Seterusnya ➜</button>
+        </div>
+
+        <div class="manualBox" id="manualBox">
+          <div class="manualTitle">📌 Penilaian Manual Guru (Jika Suara Tidak Mampu Dikesan Auto):</div>
+          <div class="manualButtons">
+            <button type="button" class="btn gray manual" data-score="100">😊 Jelas (100%)</button>
+            <button type="button" class="btn gray manual" data-score="75">🙂 Hampir (75%)</button>
+            <button type="button" class="btn gray manual" data-score="50">🌱 Bimbingan (50%)</button>
+          </div>
+        </div>
+        <div class="notice">ℹ️ Penilaian automatik berasaskan pengecaman sebutan pelayar (Bahasa Melayu ms-MY).</div>
+      </div>
+    </section>
+
+    <aside class="card">
+      <div class="sideTitle">🎁 Ganjaran Saya</div>
+      <div class="rewardPanel">
+        <div class="rewardGrid">
+          <div class="rewardCell">⭐ Bintang<span id="starBig">0</span></div>
+          <div class="rewardCell">🪙 Syiling<span id="coinBig">0</span></div>
+          <div class="rewardCell">🏆 Terbaik<span id="bestScore">0%</span></div>
+          <div class="rewardCell">✅ Selesai<span id="doneCount">0</span></div>
+        </div>
+      </div>
+
+      <div class="sideTitle">🏅 Lencana Pencapaian</div>
+      <div class="badges">
+        <span class="badge" id="b1">🌱 Berani Cuba</span>
+        <span class="badge" id="b2">🎙️ Suara Jelas</span>
+        <span class="badge" id="b3">🔥 3 Berturut</span>
+        <span class="badge" id="b4">⭐ 10 Bintang</span>
+        <span class="badge" id="b5">🏆 Juara Kata Nama</span>
+      </div>
+
+      <div class="mission" id="missionTip">
+        <strong>Misi sekarang:</strong><br>
+        Dengarkan sebutan “bo”, kemudian tekan mikrofon dan sebut “bo”.
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div id="guideModal" class="modalOverlay" aria-hidden="true">
+  <div class="modalContent">
+    <div class="modalHeader">
+      <div class="modalTitle">❓ Panduan Penggunaan Game</div>
+      <button type="button" id="closeGuideBtn" class="closeBtn">✕</button>
+    </div>
+    <div class="guideStep">
+      <h4>1. 🎯 Pilih Kategori Kata Nama Am</h4>
+      <p>Tekan butang kategori di atas (Benda, Haiwan, Tempat, Sayur, Makanan) untuk mula pengembaraan membaca!</p>
+    </div>
+    <div class="guideStep">
+      <h4>2. 🔊 Dengar Sebutan</h4>
+      <p>Tekan butang <strong>"🔊 Dengar sebutan"</strong> untuk mendengar suku kata atau perkataan yang perlu disebutkan.</p>
+    </div>
+    <div class="guideStep">
+      <h4>3. 🎙 Tekan & Sebut</h4>
+      <p>Tekan butang <strong>"🎙️ Tekan & Sebut"</strong>, benarkan akses mikrofon pelayar, dan sebut perkataan tersebut dengan jelas!</p>
+    </div>
+    <div class="guideStep">
+      <h4>4. 👨‍🏫 Fungsi Khas Cikgu / Ibu Bapa</h4>
+      <p>Anda boleh merakam suara anda sendiri dengan butang <strong>"🎙️ Rakam Suara Khas"</strong> supaya murid mendengar sebutan guru/ibu bapa!</p>
+    </div>
+    <div class="guideStep">
+      <h4>5. 📌 Penilaian Manual Guru</h4>
+      <p>Jika mikrofon tidak tersedia, guru/ibu bapa boleh menilai secara manual menggunakan butang penilaian di bawah.</p>
+    </div>
+    <div class="guideStep">
+      <h4>6. 💾 Cara Simpan & Buka Fail</h4>
+      <p>Simpan kod ini sebagai fail <code>index.html</code> pada komputer anda, kemudian dwi-klik fail tersebut untuk membukanya terus dalam pelayar (Chrome, Edge, atau Safari)!</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  let soundEnabled = true;
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+  function playSound(type) {
+    if (!soundEnabled || !audioCtx) return;
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    const now = audioCtx.currentTime;
+
+    if (type === 'click') {
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(400, now);
+      osc.frequency.exponentialRampToValueAtTime(800, now + 0.08);
+      gain.gain.setValueAtTime(0.15, now);
+      gain.gain.linearRampToValueAtTime(0.01, now + 0.08);
+      osc.start(now);
+      osc.stop(now + 0.08);
+    } else if (type === 'correct') {
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(523.25, now);
+      osc.frequency.setValueAtTime(659.25, now + 0.1);
+      osc.frequency.setValueAtTime(783.99, now + 0.2);
+      gain.gain.setValueAtTime(0.2, now);
+      gain.gain.linearRampToValueAtTime(0.01, now + 0.35);
+      osc.start(now);
+      osc.stop(now + 0.35);
+    } else if (type === 'sparkle') {
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(800, now);
+      osc.frequency.exponentialRampToValueAtTime(1600, now + 0.15);
+      gain.gain.setValueAtTime(0.15, now);
+      gain.gain.linearRampToValueAtTime(0.01, now + 0.15);
+      osc.start(now);
+      osc.stop(now + 0.15);
+    } else if (type === 'fanfare') {
+      osc.type = 'square';
+      osc.frequency.setValueAtTime(440, now);
+      osc.frequency.setValueAtTime(554.37, now + 0.12);
+      osc.frequency.setValueAtTime(659.25, now + 0.24);
+      osc.frequency.setValueAtTime(880, now + 0.36);
+      gain.gain.setValueAtTime(0.15, now);
+      gain.gain.linearRampToValueAtTime(0.01, now + 0.55);
+      osc.start(now);
+      osc.stop(now + 0.55);
+    }
+  }
+
+  const categories = {
+    benda: [
+      { target: "bo", display: "bo", emoji: "🍼", hint: "Suku kata pertama bagi botol.", aliases: ["bo", "bow"] },
+      { target: "tol", display: "tol", emoji: "🍼", hint: "Suku kata kedua bagi botol.", aliases: ["tol", "tall"] },
+      { target: "botol", display: "botol", emoji: "🍼", hint: "Cantumkan suku kata: bo + tol = botol", aliases: ["botol"] },
+
+      { target: "bo", display: "bo", emoji: "⚽", hint: "Suku kata pertama bagi bola.", aliases: ["bo", "bow"] },
+      { target: "la", display: "la", emoji: "⚽", hint: "Suku kata kedua bagi bola.", aliases: ["la", "lah"] },
+      { target: "bola", display: "bola", emoji: "⚽", hint: "Cantumkan suku kata: bo + la = bola", aliases: ["bola"] },
+
+      { target: "bu", display: "bu", emoji: "📚", hint: "Suku kata pertama bagi buku.", aliases: ["bu"] },
+      { target: "ku", display: "ku", emoji: "📚", hint: "Suku kata kedua bagi buku.", aliases: ["ku"] },
+      { target: "buku", display: "buku", emoji: "📚", hint: "Cantumkan suku kata: bu + ku = buku", aliases: ["buku"] },
+
+      { target: "ba", display: "ba", emoji: "👕", hint: "Suku kata pertama bagi baju.", aliases: ["ba"] },
+      { target: "ju", display: "ju", emoji: "👕", hint: "Suku kata kedua bagi baju.", aliases: ["ju"] },
+      { target: "baju", display: "baju", emoji: "👕", hint: "Cantumkan suku kata: ba + ju = baju", aliases: ["baju"] },
+
+      { target: "to", display: "to", emoji: "🧢", hint: "Suku kata pertama bagi topi.", aliases: ["to", "toh"] },
+      { target: "pi", display: "pi", emoji: "🧢", hint: "Suku kata kedua bagi topi.", aliases: ["pi", "pee"] },
+      { target: "topi", display: "topi", emoji: "🧢", hint: "Cantumkan suku kata: to + pi = topi", aliases: ["topi"] }
+    ],
+
+    haiwan: [
+      { target: "ku", display: "ku", emoji: "🐎", hint: "Suku kata pertama bagi kuda.", aliases: ["ku"] },
+      { target: "da", display: "da", emoji: "🐎", hint: "Suku kata kedua bagi kuda.", aliases: ["da", "dah"] },
+      { target: "kuda", display: "kuda", emoji: "🐎", hint: "Cantumkan suku kata: ku + da = kuda", aliases: ["kuda"] },
+
+      { target: "ru", display: "ru", emoji: "🦌", hint: "Suku kata pertama bagi rusa.", aliases: ["ru"] },
+      { target: "sa", display: "sa", emoji: "🦌", hint: "Suku kata kedua bagi rusa.", aliases: ["sa", "sah"] },
+      { target: "rusa", display: "rusa", emoji: "🦌", hint: "Cantumkan suku kata: ru + sa = rusa", aliases: ["rusa"] },
+
+      { target: "ke", display: "ke", emoji: "🐒", hint: "Suku kata pertama bagi kera.", aliases: ["ke"] },
+      { target: "ra", display: "ra", emoji: "🐒", hint: "Suku kata kedua bagi kera.", aliases: ["ra", "rah"] },
+      { target: "kera", display: "kera", emoji: "🐒", hint: "Cantumkan suku kata: ke + ra = kera", aliases: ["kera"] },
+
+      { target: "u", display: "u", emoji: "🐍", hint: "Suku kata pertama bagi ular.", aliases: ["u", "oo"] },
+      { target: "lar", display: "lar", emoji: "🐍", hint: "Suku kata kedua bagi ular.", aliases: ["lar", "la"] },
+      { target: "ular", display: "ular", emoji: "🐍", hint: "Cantumkan suku kata: u + lar = ular", aliases: ["ular"] },
+
+      { target: "ga", display: "ga", emoji: "🐘", hint: "Suku kata pertama bagi gajah.", aliases: ["ga"] },
+      { target: "jah", display: "jah", emoji: "🐘", hint: "Suku kata kedua bagi gajah.", aliases: ["jah", "ja"] },
+      { target: "gajah", display: "gajah", emoji: "🐘", hint: "Cantumkan suku kata: ga + jah = gajah", aliases: ["gajah"] }
+    ],
+
+    tempat: [
+      { target: "de", display: "de", emoji: "🏡", hint: "Suku kata pertama bagi desa.", aliases: ["de", "day"] },
+      { target: "sa", display: "sa", emoji: "🏡", hint: "Suku kata kedua bagi desa.", aliases: ["sa", "sah"] },
+      { target: "desa", display: "desa", emoji: "🏡", hint: "Cantumkan suku kata: de + sa = desa", aliases: ["desa"] },
+
+      { target: "ko", display: "ko", emoji: "🏙️", hint: "Suku kata pertama bagi kota.", aliases: ["ko"] },
+      { target: "ta", display: "ta", emoji: "🏙️", hint: "Suku kata kedua bagi kota.", aliases: ["ta", "tah"] },
+      { target: "kota", display: "kota", emoji: "🏙️", hint: "Cantumkan suku kata: ko + ta = kota", aliases: ["kota"] },
+
+      { target: "pa", display: "pa", emoji: "🏪", hint: "Suku kata pertama bagi pasar.", aliases: ["pa"] },
+      { target: "sar", display: "sar", emoji: "🏪", hint: "Suku kata kedua bagi pasar.", aliases: ["sar", "sa"] },
+      { target: "pasar", display: "pasar", emoji: "🏪", hint: "Cantumkan suku kata: pa + sar = pasar", aliases: ["pasar"] },
+
+      { target: "ta", display: "ta", emoji: "🛝", hint: "Suku kata pertama bagi taman.", aliases: ["ta"] },
+      { target: "man", display: "man", emoji: "🛝", hint: "Suku kata kedua bagi taman.", aliases: ["man", "ma"] },
+      { target: "taman", display: "taman", emoji: "🛝", hint: "Cantumkan suku kata: ta + man = taman", aliases: ["taman"] },
+
+      { target: "ja", display: "ja", emoji: "🛣️", hint: "Suku kata pertama bagi jalan.", aliases: ["ja"] },
+      { target: "lan", display: "lan", emoji: "🛣️", hint: "Suku kata kedua bagi jalan.", aliases: ["lan", "la"] },
+      { target: "jalan", display: "jalan", emoji: "🛣️", hint: "Cantumkan suku kata: ja + lan = jalan", aliases: ["jalan"] }
+    ],
+
+    sayur: [
+      { target: "sa", display: "sa", emoji: "🥬", hint: "Suku kata pertama bagi sawi.", aliases: ["sa"] },
+      { target: "wi", display: "wi", emoji: "🥬", hint: "Suku kata kedua bagi sawi.", aliases: ["wi", "we"] },
+      { target: "sawi", display: "sawi", emoji: "🥬", hint: "Cantumkan suku kata: sa + wi = sawi", aliases: ["sawi"] },
+
+      { target: "la", display: "la", emoji: "🎃", hint: "Suku kata pertama bagi labu.", aliases: ["la"] },
+      { target: "bu", display: "bu", emoji: "🎃", hint: "Suku kata kedua bagi labu.", aliases: ["bu"] },
+      { target: "labu", display: "labu", emoji: "🎃", hint: "Cantumkan suku kata: la + bu = labu", aliases: ["labu"] },
+
+      { target: "ci", display: "ci", emoji: "🌶", hint: "Suku kata pertama bagi cili.", aliases: ["ci", "chee"] },
+      { target: "li", display: "li", emoji: "🌶️", hint: "Suku kata kedua bagi cili.", aliases: ["li", "lee"] },
+      { target: "cili", display: "cili", emoji: "🌶️", hint: "Cantumkan suku kata: ci + li = cili", aliases: ["cili"] },
+
+      { target: "ti", display: "ti", emoji: "🥒", hint: "Suku kata pertama bagi timun.", aliases: ["ti", "tee"] },
+      { target: "mun", display: "mun", emoji: "🥒", hint: "Suku kata kedua bagi timun.", aliases: ["mun", "mu"] },
+      { target: "timun", display: "timun", emoji: "🥒", hint: "Cantumkan suku kata: ti + mun = timun", aliases: ["timun"] },
+
+      { target: "ba", display: "ba", emoji: "🧅", hint: "Suku kata pertama bagi bawang.", aliases: ["ba"] },
+      { target: "wang", display: "wang", emoji: "🧅", hint: "Suku kata kedua bagi bawang.", aliases: ["wang", "wa"] },
+      { target: "bawang", display: "bawang", emoji: "🧅", hint: "Cantumkan suku kata: ba + wang = bawang", aliases: ["bawang"] }
+    ],
+
+    makanan: [
+      { target: "na", display: "na", emoji: "🍚", hint: "Suku kata pertama bagi nasi.", aliases: ["na"] },
+      { target: "si", display: "si", emoji: "🍚", hint: "Suku kata kedua bagi nasi.", aliases: ["si", "see"] },
+      { target: "nasi", display: "nasi", emoji: "🍚", hint: "Cantumkan suku kata: na + si = nasi", aliases: ["nasi"] },
+
+      { target: "ro", display: "ro", emoji: "🍞", hint: "Suku kata pertama bagi roti.", aliases: ["ro"] },
+      { target: "ti", display: "ti", emoji: "🍞", hint: "Suku kata kedua bagi roti.", aliases: ["ti", "tee"] },
+      { target: "roti", display: "roti", emoji: "🍞", hint: "Cantumkan suku kata: ro + ti = roti", aliases: ["roti"] },
+
+      { target: "su", display: "su", emoji: "🥛", hint: "Suku kata pertama bagi susu.", aliases: ["su"] },
+      { target: "su", display: "su", emoji: "🥛", hint: "Suku kata kedua bagi susu.", aliases: ["su"] },
+      { target: "susu", display: "susu", emoji: "🥛", hint: "Cantumkan suku kata: su + su = susu", aliases: ["susu"] },
+
+      { target: "ka", display: "ka", emoji: "🍲", hint: "Suku kata pertama bagi kari.", aliases: ["ka"] },
+      { target: "ri", display: "ri", emoji: "🍲", hint: "Suku kata kedua bagi kari.", aliases: ["ri", "ree"] },
+      { target: "kari", display: "kari", emoji: "🍲", hint: "Cantumkan suku kata: ka + ri = kari", aliases: ["kari"] },
+
+      { target: "sa", display: "sa", emoji: "🍢", hint: "Suku kata pertama bagi sate.", aliases: ["sa"] },
+      { target: "te", display: "te", emoji: "🍢", hint: "Suku kata kedua bagi sate.", aliases: ["te", "tay"] },
+      { target: "sate", display: "sate", emoji: "🍢", hint: "Cantumkan suku kata: sa + te = sate", aliases: ["sate"] }
+    ]
+  };
+
+  let currentCat = "benda";
+  let rounds = categories[currentCat];
+  let idx = 0;
+  let points = 0;
+  let coins = 0;
+  let stars = 0;
+  let streak = 0;
+  let best = 0;
+  let done = 0;
+  let rewardedThisRound = false;
+  let recognition = null;
+  let listening = false;
+
+  // Custom voice recording storage (persist in localStorage)
+  let customVoices = {};
+  try {
+    customVoices = JSON.parse(localStorage.getItem('misiMembaca_customVoices') || '{}');
+  } catch(e) { customVoices = {}; }
+
+  let customMediaRecorder = null;
+  let customAudioChunks = [];
+
+  const $ = id => document.getElementById(id);
+  const word = $("word"), emoji = $("emoji"), syllables = $("syllables"), bar = $("bar");
+  const result = $("result"), micBtn = $("micBtn"), nextBtn = $("nextBtn"), againBtn = $("againBtn");
+  const listenBtn = $("listenBtn"), roundText = $("roundText"), levelTitle = $("levelTitle");
+  const soundToggle = $("soundToggle");
+
+  soundToggle.addEventListener("click", () => {
+    soundEnabled = !soundEnabled;
+    soundToggle.textContent = soundEnabled ? "🔊 Bunyi: ON" : "🔇 Bunyi: OFF";
+  });
+
+  const guideBtn = $("guideBtn");
+  const guideModal = $("guideModal");
+  const closeGuideBtn = $("closeGuideBtn");
+
+  if (guideBtn && guideModal) {
+    guideBtn.addEventListener("click", () => {
+      playSound('click');
+      guideModal.classList.add("active");
+    });
+  }
+  if (closeGuideBtn && guideModal) {
+    closeGuideBtn.addEventListener("click", () => {
+      playSound('click');
+      guideModal.classList.remove("active");
+    });
+  }
+
+  // Handle Category Switching
+  document.querySelectorAll(".catBtn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      playSound('click');
+      document.querySelectorAll(".catBtn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentCat = btn.dataset.cat;
+      rounds = categories[currentCat];
+      idx = 0;
+      renderRound();
+    });
+  });
+
+  function normalize(s) {
+    return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+  }
+
+  function lev(a, b) {
+    a = normalize(a); b = normalize(b);
+    const m = a.length, n = b.length;
+    const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
+    for (let i = 0; i <= m; i++) dp[i][0] = i;
+    for (let j = 0; j <= n; j++) dp[0][j] = j;
+    for (let i = 1; i <= m; i++) {
+      for (let j = 1; j <= n; j++) {
+        dp[i][j] = Math.min(
+          dp[i - 1][j] + 1,
+          dp[i][j - 1] + 1,
+          dp[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)
+        );
+      }
+    }
+    return dp[m][n];
+  }
+
+  function scoreTranscript(transcript, round) {
+    const heard = normalize(transcript);
+    let top = 0;
+    round.aliases.forEach(a => {
+      const target = normalize(a);
+      if (heard === target) top = Math.max(top, 100);
+      else if (heard.split(" ").includes(target)) top = Math.max(top, 95);
+      else {
+        const maxLen = Math.max(heard.length, target.length, 1);
+        top = Math.max(top, Math.round((1 - lev(heard, target) / maxLen) * 100));
+      }
+    });
+    return Math.max(0, Math.min(100, top));
+  }
+
+  function speakTarget() {
+    playSound('click');
+    const targetKey = rounds[idx].target;
+
+    // Utamakan suara rakaman khas cikgu/ibu bapa
+    if (customVoices[targetKey]) {
+      const audio = new Audio(customVoices[targetKey]);
+      audio.play().catch(e => {
+        console.warn("Gagal memainkan audio rakaman:", e);
+      });
+      return;
+    }
+
+    // Suara automatik pelayar
+    if ("speechSynthesis" in window) {
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(targetKey);
+      u.lang = "ms-MY";
+      u.rate = 0.7;
+      u.pitch = 1.1;
+      speechSynthesis.speak(u);
+    }
+  }
+
+  function updateRecPanelUI() {
+    const targetKey = rounds[idx].target;
+    $("recWordTag").textContent = rounds[idx].display;
+
+    if (customVoices[targetKey]) {
+      $("recStatus").textContent = "✅ Suara rakaman anda sedia digunakan untuk item ini!";
+      $("recStatus").style.color = "#15803d";
+      $("playRecBtn").disabled = false;
+      $("delRecBtn").disabled = false;
+    } else {
+      $("recStatus").textContent = "ℹ️ Belum ada rakaman khas. Menggunakan sebutan automatik pelayar (ms-MY).";
+      $("recStatus").style.color = "#475569";
+      $("playRecBtn").disabled = true;
+      $("delRecBtn").disabled = true;
+    }
+  }
+
+  function renderRound() {
+    const r = rounds[idx];
+    rewardedThisRound = false;
+    word.textContent = r.display;
+    emoji.textContent = r.emoji;
+    syllables.textContent = r.hint;
+    roundText.textContent = (idx + 1) + " / " + rounds.length;
+    bar.style.width = (idx / rounds.length * 100) + "%";
+    nextBtn.disabled = true;
+
+    updateRecPanelUI();
+
+    result.innerHTML = '<div class="heard">Sistem akan paparkan apa yang didengar di sini.</div>' +
+                       '<div class="score">—</div>' +
+                       '<div class="feedback">Tekan "Dengar sebutan" dahulu atau terus sebut 😊</div>';
+
+    $("missionTip").innerHTML = '<strong>Misi sekarang:</strong><br>Dengarkan sebutan “' + r.display +
+                                '”, kemudian tekan mikrofon dan sebut “' + r.display + '”.';
+
+    const catName = currentCat.charAt(0).toUpperCase() + currentCat.slice(1);
+    levelTitle.textContent = "Kategori: " + catName;
+  }
+
+  function feedbackFor(s) {
+    if (s >= 90) return ["Hebat! Sebutan sangat jelas! 🌟", "good"];
+    if (s >= 75) return ["Bagus! Sempurna. Cuba sekali lagi jika mahu skor 100% 😊", "mid"];
+    if (s >= 55) return ["Usaha yang baik. Dengar contoh dan sebut perlahan-lahan 🌱", "mid"];
+    return ["Belum jelas lagi. Tidak mengapa—dengar sebutan dan cuba semula 💛", "low"];
+  }
+
+  function award(score) {
+    if (rewardedThisRound) return;
+    rewardedThisRound = true;
+
+    const earnedPoints = Math.max(10, Math.round(score));
+    const earnedCoins = score >= 90 ? 5 : score >= 75 ? 3 : 1;
+    const earnedStars = score >= 90 ? 3 : score >= 75 ? 2 : 1;
+
+    points += earnedPoints;
+    coins += earnedCoins;
+    stars += earnedStars;
+    done++;
+
+    if (score >= 75) {
+      streak++;
+      playSound('correct');
+    } else {
+      streak = 0;
+    }
+
+    best = Math.max(best, score);
+    updateStats();
+    burst();
+  }
+
+  function updateStats() {
+    $("points").textContent = points;
+    $("coins").textContent = coins;
+    $("stars").textContent = stars;
+    $("streak").textContent = streak;
+
+    $("starBig").textContent = stars;
+    $("coinBig").textContent = coins;
+    $("bestScore").textContent = best + "%";
+    $("doneCount").textContent = done;
+
+    $("b1").classList.toggle("on", done >= 1);
+    $("b2").classList.toggle("on", best >= 90);
+    $("b3").classList.toggle("on", streak >= 3);
+    $("b4").classList.toggle("on", stars >= 10);
+    $("b5").classList.toggle("on", done >= 25);
+  }
+
+  function showScore(score, heard, manual = false) {
+    const [msg, cls] = feedbackFor(score);
+    result.innerHTML = '<div class="heard">' + (manual ? "Penilaian Guru" : "Sistem Dengar: “" + (heard || "—") + "”") + '</div>' +
+                       '<div class="score ' + cls + '">' + score + '%</div>' +
+                       '<div class="feedback ' + cls + '">' + msg + '</div>';
+    award(score);
+    nextBtn.disabled = false;
+  }
+
+  function burst() {
+    playSound('sparkle');
+    const rect = result.getBoundingClientRect();
+    const root = $("app");
+    ["⭐", "✨", "🪙", "🎉", "🌟"].forEach((x, i) => {
+      const s = document.createElement("span");
+      s.className = "spark";
+      s.textContent = x;
+      s.style.left = (rect.left - root.getBoundingClientRect().left + rect.width * (0.15 + i * 0.16)) + "px";
+      s.style.top = (result.offsetTop + 10) + "px";
+      root.appendChild(s);
+      setTimeout(() => s.remove(), 1200);
+    });
+  }
+
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (SR) {
+    recognition = new SR();
+    recognition.lang = "ms-MY";
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 5;
+    recognition.continuous = false;
+
+    recognition.onstart = () => {
+      listening = true;
+      micBtn.classList.add("listening");
+      micBtn.innerHTML = '<span class="micPulse">🎙</span> Sedang mendengar...';
+      result.innerHTML = '<div class="heard">👂 Sila sebut sekarang...</div><div class="score">...</div><div class="feedback">Sebut kata dengan jelas.</div>';
+    };
+
+    recognition.onresult = (e) => {
+      let bestScoreLocal = 0, bestText = "";
+      const res = e.results[e.resultIndex];
+      for (let i = 0; i < res.length; i++) {
+        const t = res[i].transcript;
+        const sc = scoreTranscript(t, rounds[idx]);
+        if (sc > bestScoreLocal) {
+          bestScoreLocal = sc;
+          bestText = t;
+        }
+      }
+      showScore(bestScoreLocal, bestText, false);
+    };
+
+    recognition.onerror = (e) => {
+      const msg = e.error === "not-allowed"
+        ? "Kebenaran mikrofon diperlukan. Sila benarkan atau guna Penilaian Guru."
+        : "Suara tidak dikesan. Cuba lagi atau guna Penilaian Guru.";
+      result.innerHTML = '<div class="heard">⚠️ ' + msg + '</div><div class="score">—</div><div class="feedback">Tiada markah ditolak.</div>';
+    };
+
+    recognition.onend = () => {
+      listening = false;
+      micBtn.classList.remove("listening");
+      micBtn.innerHTML = '<span class="micPulse">🎙️</span> Tekan & Sebut';
+    };
+  } else {
+    micBtn.disabled = true;
+    micBtn.title = "Pengecaman suara automatik tidak disokong pada pelayar ini.";
+    result.innerHTML = '<div class="heard">Pengecaman suara automatik tidak tersedia.</div><div class="score">—</div><div class="feedback">Guna pelayar Chrome/Edge atau butang penilaian guru.</div>';
+  }
+
+  listenBtn.addEventListener("click", speakTarget);
+
+  $("toggleRecPanelBtn").addEventListener("click", () => {
+    playSound('click');
+    const p = $("customRecPanel");
+    p.style.display = p.style.display === "none" ? "block" : "none";
+  });
+
+  $("startRecBtn").addEventListener("click", async () => {
+    playSound('click');
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      customAudioChunks = [];
+      customMediaRecorder = new MediaRecorder(stream);
+
+      customMediaRecorder.ondataavailable = e => {
+        if (e.data.size > 0) customAudioChunks.push(e.data);
+      };
+
+      customMediaRecorder.onstop = () => {
+        const audioBlob = new Blob(customAudioChunks, { type: 'audio/webm' });
+        const reader = new FileReader();
+        reader.readAsDataURL(audioBlob);
+        reader.onloadend = () => {
+          const base64Audio = reader.result;
+          const targetKey = rounds[idx].target;
+          customVoices[targetKey] = base64Audio;
+          try {
+            localStorage.setItem('misiMembaca_customVoices', JSON.stringify(customVoices));
+          } catch(e){}
+          updateRecPanelUI();
+        };
+        stream.getTracks().forEach(track => track.stop());
+      };
+
+      customMediaRecorder.start();
+      $("startRecBtn").disabled = true;
+      $("stopRecBtn").disabled = false;
+      $("recStatus").textContent = "🔴 Sedang merakam suara anda... (Sebut dengan jelas)";
+      $("recStatus").style.color = "#dc2626";
+    } catch(err) {
+      alert("Tidak dapat mengakses mikrofon untuk merakam suara.");
+    }
+  });
+
+  $("stopRecBtn").addEventListener("click", () => {
+    playSound('click');
+    if (customMediaRecorder && customMediaRecorder.state !== "inactive") {
+      customMediaRecorder.stop();
+    }
+    $("startRecBtn").disabled = false;
+    $("stopRecBtn").disabled = true;
+  });
+
+  $("playRecBtn").addEventListener("click", () => {
+    speakTarget();
+  });
+
+  $("delRecBtn").addEventListener("click", () => {
+    playSound('click');
+    const targetKey = rounds[idx].target;
+    delete customVoices[targetKey];
+    try {
+      localStorage.setItem('misiMembaca_customVoices', JSON.stringify(customVoices));
+    } catch(e){}
+    updateRecPanelUI();
+  });
+
+  micBtn.addEventListener("click", () => {
+    playSound('click');
+    if (!recognition) return;
+    if (listening) {
+      try { recognition.stop(); } catch (e) {}
+      return;
+    }
+    try { recognition.start(); } catch (e) {}
+  });
+
+  againBtn.addEventListener("click", () => {
+    playSound('click');
+    rewardedThisRound = false;
+    nextBtn.disabled = true;
+    result.innerHTML = '<div class="heard">Cuba semula. Dengar sebutan jika perlu.</div><div class="score">—</div><div class="feedback">Kamu boleh cuba berkali-kali! 😊</div>';
+  });
+
+  nextBtn.addEventListener("click", () => {
+    playSound('click');
+    idx++;
+    if (idx >= rounds.length) {
+      playSound('fanfare');
+      bar.style.width = "100%";
+      const catName = currentCat.charAt(0).toUpperCase() + currentCat.slice(1);
+      $("gameArea").innerHTML = '<div class="end"><div class="trophy">🏆</div><h2>Syabas, Juara Kata Nama!</h2>' +
+        '<p>Kamu telah menyelesaikan semua suku kata & perkataan bagi kategori <strong>' + catName + '</strong>!</p>' +
+        '<div class="rewardPanel"><strong>⭐ ' + stars + ' Bintang &nbsp;|&nbsp; 🪙 ' + coins + ' Syiling &nbsp;|&nbsp; 🎯 ' + points + ' Mata</strong></div>' +
+        '<button type="button" id="restartBtn" class="btn next">Main Semula Kategori Ini ↺</button></div>';
+      $("b5").classList.add("on");
+      document.getElementById("restartBtn").addEventListener("click", () => {
+        idx = 0;
+        renderRound();
+      });
+      return;
+    }
+    renderRound();
+  });
+
+  document.querySelectorAll(".manual").forEach(b => {
+    b.addEventListener("click", () => {
+      playSound('click');
+      showScore(Number(b.dataset.score), "", true);
+    });
+  });
+
+  renderRound();
+  updateStats();
+})();
+</script>
+</body>
+</html>
